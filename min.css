@@ -57,8 +57,8 @@ body{
     margin-right: auto;
     margin-left: auto;
     display: block;
-    height: 550px;
-    margin-top: 70px;
+    height: 600px;
+    margin-top: 40px;
     /*box-shadow: 0px 0px 5px #ffffff;*/
     margin-bottom: auto;
     border-radius: 20px;
@@ -174,7 +174,22 @@ body{
     color: #01bf71;
 }
 
-
+#topsoc{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    font-size: 17px;
+    margin: 2px;
+    margin-left: 20px;
+    margin-right: 10px;
+    border-radius: 50px;
+    background-color: #01bf71;
+}
+#topsoc:hover{
+    background-color: #FFFFFF;
+    color: black;
+}
 
 label{
     font-size: 15px;
@@ -185,6 +200,7 @@ label{
 input[type="text"]{
     background-color: #0d0d0d;
     width: 280px;
+    color: #FFFFFF;
     height:30px;
     padding:5px;
     border:none;
@@ -204,6 +220,7 @@ input[type="text"]{
 }
 input[type="password"]{
     background-color:#0d0d0d;
+    color: #FFFFFF;
     width: 242px;
     height:30px;
     padding:5px;
@@ -398,5 +415,10 @@ label{
 }
 #hiden{
 background-color: #0d0d0d;
+}
+#topsoc{
+    margin-left: 20px;
+    margin-right: 0;
+    margin: 11px;
 }
 }
