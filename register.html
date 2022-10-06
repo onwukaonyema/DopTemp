@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>Register - Whoami</title>
+</head>
+<script>
+    
+    function fieldValidation(){
+           let fullname = document.getElementsByClassName("fullname").value;
+           let username = document.getElementsByClassName("username").value;
+           let password = document.getElementsByClassName("password").value;
+           let conpassword = document.getElementsByClassName("conpassword").value;
+           localStorage.setItem("fullname", fullname);
+           localStorage.setItem("username", username);
+           localStorage.setItem("password", password);
+
+           if(password===conpassword){
+            swal("Registeration Successful!","You will be redirected to your dashboard", "success");
+            localStorage.setItem("fullname", fullname);
+           localStorage.setItem("username", username);
+           localStorage.setItem("password", password);
+
+            window.open("dashboard.html");
+
+           }
+    }
+
+    function togglepass(){
+        var pass = document.getElementById("pass");
+        var hide = document.getElementById("hide");
+        
+        if(pass.type==="password"){
+            pass.type="text";
+            pass.style.width="185px";
+            pass.style.transition = "2s"
+            hide.setAttribute("class","fa fa-eye-slash");
+            hide.style.paddingTop= "4.5px";
+            hide.style.paddingBottom= "6.2px";
+            hide.style.backgroundColor= "#0d0d0d";
+            hide.style.paddingRight= "7px";
+            hide.style.paddingLeft= "7px";
+            hide.style.fontSize= "17px";
+            hide.style.borderBottom= "3px solid #01bf71";
+        }
+        else{
+            pass.type="password";
+            hide.setAttribute("class","fa fa-eye");
+            hide.style.paddingTop= "4.5px";
+            hide.style.paddingBottom= "6.2px";
+            hide.style.backgroundColor= "#0d0d0d";
+            hide.style.paddingRight= "7px";
+            hide.style.paddingLeft= "7px";
+            hide.style.fontSize= "17px";
+            hide.style.borderBottom= "3px solid #01bf71";
+        }
+    }
+    function toggle(){
+        var pass = document.getElementById("conpass");
+        var hide = document.getElementById("hiden");
+        
+        if(pass.type==="password"){
+            pass.type="text";
+            pass.style.width="185px";
+            pass.style.transition = "2s"
+            hiden.setAttribute("class","fa fa-eye-slash");
+            hiden.style.paddingTop= "4.5px";
+            hiden.style.paddingBottom= "6.2px";
+            hiden.style.backgroundColor= "#0d0d0d";
+            hiden.style.paddingRight= "7px";
+            hiden.style.paddingLeft= "7px";
+            hiden.style.fontSize= "17px";
+            hiden.style.borderBottom= "3px solid #01bf71";
+        }
+        else{
+            pass.type="password";
+            hiden.setAttribute("class","fa fa-eye");
+            hiden.style.paddingTop= "4.5px";
+            hiden.style.paddingBottom= "6.2px";
+            hiden.style.backgroundColor= "#0d0d0d";
+            hiden.style.paddingRight= "7px";
+            hiden.style.paddingLeft= "7px";
+            hiden.style.fontSize= "17px";
+            hiden.style.borderBottom= "3px solid #01bf71";
+        }
+    }
+    
+</script>
+<body>
+    <div class="container">
+        <div class="card">
+            <!--Registeration detials are stored in your device-->
+                <h2 class="form-header">Register</h2>
+                <label for="fullname">Fullname</label><span class="required">*</span><br/>
+                <i class="fa fa-user-secret " id="formicons" aria-hidden="true"></i><input type="text" class="fullname" name="fullname" required><br/><br/>
+                <label for="username">Username</label><span class="required">*</span><br/>
+                <i class="fa fa-user" id="formicons" aria-hidden="true"></i><input type="text" class="username" maxlength="4" name="username" required><br/><br/>
+                <label for="password">Password</label><span class="required">*</span><br/>
+                <i class="fa fa-key" aria-hidden="true" id="formicons"></i></i><input type="password" id="pass" class="password" name="password" required><i class="fa fa-eye" onclick="togglepass()" aria-hidden="true" id="hide"></i><br/><br/>
+                <label for="password">Confirm password</label><span class="required">*</span><br/>
+                <i class="fa fa-key" aria-hidden="true" id="formicons"></i></i><input type="password" id="conpass" class="conpassword" name="password" required><i class="fa fa-eye" onclick="toggle()" aria-hidden="true" id="hiden"></i><br/><br/>
+                <button type="submit" class="submit" onclick="fieldValidation()">Submit</button>
+                <p class="ihaa"><a href="login.html">I Have An Account <i class="fa fa-external-link" aria-hidden="true"></i>
+                </a></p>
+                <!--<hr role="separator">-->
+            </div>
+    </div>
+    
+</body>
+</html>
